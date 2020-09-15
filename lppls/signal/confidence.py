@@ -6,11 +6,9 @@ def LPPL_confidence(log_price, time_windows):
     
     sols = []
     for dt in time_windows:
-        print('dt: ' + str(dt) )
         sols.append(fit_cma7(log_price[-dt:]))
 
     dt_max = get_dt_max(sols, time_windows)
-    print('dt_max:' + str(dt_max))
     LPPL_confidences = []
     total_returns = []
     tcs = []
