@@ -133,3 +133,6 @@ outcmaes/
 
 # vscode
 .vscode/
+
+# output files
+*.csv
