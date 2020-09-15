@@ -34,7 +34,6 @@ def LPPL_confidence_signal(log_price, time, time_windows):
         d.update(q_out.get())
 
     lists = sorted(d.items()) # sorted by key, return a list of tuples
-
     time, LPPL_confidence_ts = zip(*lists) # unpack a list of pairs into two tuples
     
     return pd.DataFrame(LPPL_confidence_ts,index=time).fillna(0)
