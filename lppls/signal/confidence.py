@@ -24,7 +24,7 @@ def LPPL_confidence(log_price, time_windows):
             if conditions_satisfied(beta=sol['beta'], omega=sol['omega'], tc=sol['tc'], A=sol['A'], B=sol['B'], C1=sol['C1'], C2=sol['C2'], dt=dt):
                 LPPL_confidences.append(1)
                 total_returns.append(_total_return(log_price[-dt:]))
-                tcs.append(sol['tc'])
+                tcs.append(dt - sol['tc'])
                 omegas.append(sol['omega'])
                 betas.append(sol['beta'])
                 As.append(sol['A'])
