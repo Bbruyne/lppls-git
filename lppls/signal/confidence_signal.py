@@ -8,7 +8,7 @@ def LPPL_confidence_signal(log_price, time, time_windows):
     q_out = Queue()
 
     # parameters
-    n_jobs = 1
+    n_jobs = 32
 
     # create and start jobs
     jobs = []
