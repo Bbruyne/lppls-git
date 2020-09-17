@@ -35,7 +35,7 @@ def LPPL_confidence(log_price, time_windows):
                 LPPL_confidences.append(0)
     if total_returns:
         conf = np.mean(LPPL_confidences)*np.sign(np.median(total_returns))
-        res = {'conf':conf,'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs)}
+        res = {'conf':conf,'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs),  'tc_min':np.min(tcs)}
   #      res = {'conf': conf,
   #      'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs), 'tc_min':np.min(tcs), 'tc_max':np.max(tcs), 'tc_median':np.median(tcs), 'tc_q1':np.percentile(tcs,25), 'tc_q3':np.percentile(tcs,75),
   #      'omega_avg':np.mean(omegas), 'omega_std':np.std(omegas), 'omega_min':np.min(omegas), 'omega_max':np.max(omegas), 'omega_median':np.median(omegas), 'omega_q1':np.percentile(omegas,25), 'omega_q3':np.percentile(omegas,75),
@@ -46,7 +46,7 @@ def LPPL_confidence(log_price, time_windows):
   #      'C2_avg':np.mean(C2s), 'C2_std':np.std(C2s),'C2_min':np.min(C2s), 'C2_max':np.max(C2s), 'C2_median':np.median(C2s), 'C2_q1':np.percentile(C2s,25), 'C2_q3':np.percentile(C2s,75)
   #      }
     else:
-        res = {'conf':0,'tc_avg': 0, 'tc_std':0}
+        res = {'conf':0,'tc_avg': 0, 'tc_std':0,  'tc_min':0}
   #      res = {'conf': 0,
   #      'tc_avg': 0, 'tc_std': 0, 'tc_min': 0, 'tc_max':0, 'tc_median':0, 'tc_q1':0, 'tc_q3':0,
   #      'omega_avg':0, 'omega_std':0, 'omega_min':0, 'omega_max':0, 'omega_median':0, 'omega_q1':0, 'omega_q3':0,
