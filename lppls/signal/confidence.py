@@ -36,7 +36,9 @@ def LPPL_confidence(log_price, time_windows):
     if total_returns:
         conf = np.mean(LPPL_confidences)*np.sign(np.median(total_returns))
         res = {'conf':conf,'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs),  'tc_min':np.min(tcs), 'tc_max':np.max(tcs), 'tc_median':np.median(tcs), 'tc_q1':np.percentile(tcs,25), 'tc_q3':np.percentile(tcs,75),
-        'omega_avg':np.mean(omegas), 'omega_std':np.std(omegas), 'omega_min':np.min(omegas), 'omega_max':np.max(omegas), 'omega_median':np.median(omegas), 'omega_q1':np.percentile(omegas,25), 'omega_q3':np.percentile(omegas,75)}
+        'omega_avg':np.mean(omegas), 'omega_std':np.std(omegas), 'omega_min':np.min(omegas), 'omega_max':np.max(omegas), 'omega_median':np.median(omegas), 'omega_q1':np.percentile(omegas,25), 'omega_q3':np.percentile(omegas,75),
+        'beta_avg':np.mean(betas), 'beta_std':np.std(betas),'beta_min':np.min(betas), 'beta_max':np.max(betas), 'beta_median':np.median(betas), 'beta_q1':np.percentile(betas,25), 'beta_q3':np.percentile(betas,75),
+        'A_avg':np.mean(As), 'A_std':np.std(As), 'A_min':np.min(As), 'A_max':np.max(As), 'A_median':np.median(As), 'A_q1':np.percentile(As,25), 'A_q3':np.percentile(As,75)}
   #      res = {'conf': conf,
   #      'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs), 'tc_min':np.min(tcs), 'tc_max':np.max(tcs), 'tc_median':np.median(tcs), 'tc_q1':np.percentile(tcs,25), 'tc_q3':np.percentile(tcs,75),
   #      'omega_avg':np.mean(omegas), 'omega_std':np.std(omegas), 'omega_min':np.min(omegas), 'omega_max':np.max(omegas), 'omega_median':np.median(omegas), 'omega_q1':np.percentile(omegas,25), 'omega_q3':np.percentile(omegas,75),
@@ -48,7 +50,9 @@ def LPPL_confidence(log_price, time_windows):
   #      }
     else:
         res = {'conf':0,'tc_avg': 0, 'tc_std':0,  'tc_min':0, 'tc_max':0, 'tc_median':0, 'tc_q1':0, 'tc_q3':0,
-        'omega_avg':0, 'omega_std':0, 'omega_min':0, 'omega_max':0, 'omega_median':0, 'omega_q1':0, 'omega_q3':0}
+        'omega_avg':0, 'omega_std':0, 'omega_min':0, 'omega_max':0, 'omega_median':0, 'omega_q1':0, 'omega_q3':0,
+        'beta_avg':0, 'beta_std':0,'beta_min':0, 'beta_max':0, 'beta_median':0, 'beta_q1':0, 'beta_q3':0,
+        'A_avg':0, 'A_std':0, 'A_min':0, 'A_max':0, 'A_median':0, 'A_q1':0, 'A_q3':0}
   #      res = {'conf': 0,
   #      'tc_avg': 0, 'tc_std': 0, 'tc_min': 0, 'tc_max':0, 'tc_median':0, 'tc_q1':0, 'tc_q3':0,
   #      'omega_avg':0, 'omega_std':0, 'omega_min':0, 'omega_max':0, 'omega_median':0, 'omega_q1':0, 'omega_q3':0,
