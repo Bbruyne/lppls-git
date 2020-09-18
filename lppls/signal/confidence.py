@@ -35,6 +35,9 @@ def LPPL_confidence(log_price, time_windows):
                 LPPL_confidences.append(0)
     if total_returns:
         conf = np.mean(LPPL_confidences)*np.sign(np.median(total_returns))
+        print(Bs)
+        print(C1s)
+        print(C2s)
         res = {'conf':conf,'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs),  'tc_min':np.min(tcs), 'tc_max':np.max(tcs), 'tc_median':np.median(tcs), 'tc_q1':np.percentile(tcs,25), 'tc_q3':np.percentile(tcs,75),
         'omega_avg':np.mean(omegas), 'omega_std':np.std(omegas), 'omega_min':np.min(omegas), 'omega_max':np.max(omegas), 'omega_median':np.median(omegas), 'omega_q1':np.percentile(omegas,25), 'omega_q3':np.percentile(omegas,75),
         'beta_avg':np.mean(betas), 'beta_std':np.std(betas),'beta_min':np.min(betas), 'beta_max':np.max(betas), 'beta_median':np.median(betas), 'beta_q1':np.percentile(betas,25), 'beta_q3':np.percentile(betas,75),
@@ -54,7 +57,7 @@ def LPPL_confidence(log_price, time_windows):
         'omega_avg':0, 'omega_std':0, 'omega_min':0, 'omega_max':0, 'omega_median':0, 'omega_q1':0, 'omega_q3':0,
         'beta_avg':0, 'beta_std':0,'beta_min':0, 'beta_max':0, 'beta_median':0, 'beta_q1':0, 'beta_q3':0,
         'A_avg':0, 'A_std':0, 'A_min':0, 'A_max':0, 'A_median':0, 'A_q1':0, 'A_q3':0,
-        'B_avg':0, 'B_std':0, 'B_min':0, 'B_max':0, 'B_median':0, 'B_q1':0, 'B_q3':0}
+        'C1_avg':0, 'C1_std':0, 'C1_min':0, 'C1_max':0, 'C1_median':0, 'C1_q1':0, 'C1_q3':0}
   #     }
   #      res = {'conf': 0,
   #      'tc_avg': 0, 'tc_std': 0, 'tc_min': 0, 'tc_max':0, 'tc_median':0, 'tc_q1':0, 'tc_q3':0,
