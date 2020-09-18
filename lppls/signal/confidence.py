@@ -35,6 +35,7 @@ def LPPL_confidence(log_price, time_windows):
                 LPPL_confidences.append(0)
     if total_returns:
         conf = np.mean(LPPL_confidences)*np.sign(np.median(total_returns))
+        print(As)
         print(Bs)
         print(C1s)
         print(C2s)
