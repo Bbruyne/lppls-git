@@ -7,7 +7,7 @@ def conditions_satisfied(beta, omega, tc, A, B, C1, C2, dt):
     #print('tc in interval: ' + str(c3))
     C = np.sqrt(C1**2+C2**2) 
     #c3 = abs(C) < 1
-    print('Amplitude of log-oscillations: ' + str(c3))
+    # print('Amplitude of log-oscillations: ' + str(c3))
     c4 = 2.5 < np.abs(omega)/2*np.log(abs(tc/(tc-dt)))
     #print('number oscillation: ' + str(c4))
     c5 = 0 < beta * abs(B) / (omega * abs(C))
