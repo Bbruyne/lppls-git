@@ -39,7 +39,7 @@ def LPPL_confidence(log_price, time_windows):
         print(Bs)
         print(C1s)
         print(C2s)
-        res = {'conf':conf, 'tc_median':np.median(tcs)}
+        res = {'conf':conf, 'tc_median':np.median(tcs),'tc_end':tcs[-1],'tc_exp':np.average(tcs,weights=np.exp(np.arange(len(tcs))))}
   #      res = {'conf': conf,
   #      'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs), 'tc_min':np.min(tcs), 'tc_max':np.max(tcs), 'tc_median':np.median(tcs), 'tc_q1':np.percentile(tcs,25), 'tc_q3':np.percentile(tcs,75),
   #      'omega_avg':np.mean(omegas), 'omega_std':np.std(omegas), 'omega_min':np.min(omegas), 'omega_max':np.max(omegas), 'omega_median':np.median(omegas), 'omega_q1':np.percentile(omegas,25), 'omega_q3':np.percentile(omegas,75),
