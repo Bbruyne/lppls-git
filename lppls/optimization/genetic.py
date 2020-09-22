@@ -14,7 +14,7 @@ def fit_genetic(log_price):
     cross_num = int(pop_num*0.5)
     mut_num = int(pop_num*0.3)
     new_num = pop_num - elite_num - mut_num
-    gen_num = 100
+    gen_num = 10
     
     for gen in range(gen_num):
         if gen == 0:
