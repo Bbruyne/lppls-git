@@ -31,5 +31,5 @@ def fit_ABC(beta, omega, tc, log_price):
 
     X = np.array([one_col,f_col,g_col,h_col]).T
     
-    A, B, C1, C2 = np.linalg.lstsq(X, log_price)[0]
+    A, B, C1, C2 = np.linalg.lstsq(X, log_price,rcond=None)[0]
     return {"A":A, "B":B, "C1":C1, "C2":C2}
