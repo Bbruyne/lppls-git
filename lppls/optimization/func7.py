@@ -17,6 +17,6 @@ def LPPL(t, A, B, C1, C2, beta, omega, tc):
 def _f(tc, t, beta):
     return (abs(tc-t))**beta
 def _g(tc, t, beta, omega):
-    return _f(tc, t, beta)*np.cos(omega*np.log(abs(tc-t)))
+    return _f(tc, t, beta)*np.cos(omega*np.log(abs(tc-t)+0.001))
 def _h(tc, t, beta, omega):
-    return _f(tc, t, beta)*np.sin(omega*np.log(abs(tc-t)))
+    return _f(tc, t, beta)*np.sin(omega*np.log(abs(tc-t)+0.001))
