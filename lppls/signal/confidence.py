@@ -1,4 +1,4 @@
-from ..optimization import fit_cma7, get_dt_max
+from ..optimization import fit_genetic, get_dt_max
 from .conditions_satisfied import conditions_satisfied
 import numpy as np
 
@@ -6,7 +6,7 @@ def LPPL_confidence(log_price, time_windows):
     
     sols = []
     for dt in time_windows:
-        sols.append(fit_cma7(log_price[-dt:]))
+        sols.append(fit_genetic(log_price[-dt:]))
 
     dt_max = get_dt_max(sols, time_windows)
     LPPL_confidences = []
