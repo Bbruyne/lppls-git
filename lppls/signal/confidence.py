@@ -48,9 +48,9 @@ def LPPL_confidence(log_price, time_windows):
         tc_q3 = np.percentile(tcs,75)
         print('tc_q3 ' + str(tc_q3))
         tc_end = tcs[-1]
-        print('tc end' + str(tc_end))
+        print('tc end ' + str(tc_end))
         tc_exp = np.average(tcs,weights=np.exp(np.arange(len(tcs))))
-        print('tc_exp' + str(tc_exp))
+        print('tc_exp ' + str(tc_exp))
         res = {'conf':conf, 'tc_median':tc_median,'tc_std':tc_std, 'tc_q1':tc_q1, 'tc_q3':tc_q3,'tc_end':tc_end,'tc_exp':tc_exp}
   #      res = {'conf': conf,
   #      'tc_avg':np.mean(tcs), 'tc_std':np.std(tcs), 'tc_min':np.min(tcs), 'tc_max':np.max(tcs), 'tc_median':np.median(tcs), 'tc_q1':np.percentile(tcs,25), 'tc_q3':np.percentile(tcs,75),
@@ -73,6 +73,7 @@ def LPPL_confidence(log_price, time_windows):
   #      'C1_avg':0, 'C1_std':0,'C1_min':0, 'C1_max':0, 'C1_median':0, 'C1_q1':0, 'C1_q3':0,
   #      'C2_avg':0, 'C2_std':0,'C2_min':0, 'C2_max':0, 'C2_median':0, 'C2_q1':0, 'C2_q3':0
   #      }
+    print('return res')
     return res
 
 def _total_return(log_price):
