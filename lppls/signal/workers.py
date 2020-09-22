@@ -16,6 +16,7 @@ class Worker(Process):
         
         while True:
             # get job from queue
+            print('Worker [' + str(self.idx) + '] has taken from in queue')
             job_params = self.queue_in.get()
             
             if job_params is None:
@@ -24,8 +25,7 @@ class Worker(Process):
             log_price = job_params['log_price']
             time_windows = job_params['time_windows']
             sig = LPPL_confidence(log_price=log_price, time_windows=time_windows)
-            print('before queue')
             self.queue_out.put({len(log_price): sig})
-            print('have put on queue')
+            print('Worker [' + str(self.idx) + '] has put on out queue')
         
         return
