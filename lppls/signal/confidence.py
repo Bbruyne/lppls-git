@@ -40,7 +40,7 @@ def LPPL_confidence(log_price, time_windows):
         print(C1s)
         print(C2s)
         tc_median = np.median(tcs)
-        print('tc median ' + str(tc_media))
+        print('tc median ' + str(tc_median))
         tc_std = np.std(tcs)
         print('tc std ' + str(tc_std))
         tc_q1 = np.percentile(tcs,25)
