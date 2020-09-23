@@ -1,7 +1,7 @@
 from multiprocessing import Process, Queue
 from .workers import Worker 
 import pandas as pd
-import time
+import time as timeSL
 
 def LPPL_confidence_signal(log_price, time, time_windows):
     # init queues
@@ -41,7 +41,7 @@ def LPPL_confidence_signal(log_price, time, time_windows):
             else:
                 d.update(item)
         else:
-            time.sleep(2)
+            timeSL.sleep(2)
 
     lists = sorted(d.items()) # sorted by key, return a list of tuples
     time, LPPL_confidence_ts = zip(*lists) # unpack a list of pairs into two tuples
