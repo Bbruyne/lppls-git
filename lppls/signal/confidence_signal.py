@@ -37,6 +37,7 @@ def LPPL_confidence_signal(log_price, time, time_windows):
             item = q_out.get()
             if item is None:
                 count += 1
+                print('Number of workers done: ' + str(count))
             else:
                 d.update(item)
         else:
