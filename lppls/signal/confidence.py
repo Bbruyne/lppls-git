@@ -1,4 +1,4 @@
-from ..optimization import fit_genetic, get_dt_max
+from ..optimization import fit_genetic, fit_cma7, get_dt_max
 from .conditions_satisfied import conditions_satisfied
 import numpy as np
 
@@ -7,7 +7,7 @@ def LPPL_confidence(log_price, time_windows, worker_id):
     sols = []
     i = 1
     for dt in time_windows:
-        sols.append(fit_genetic(log_price[-dt:]))
+        sols.append(fit_cma7(log_price[-dt:]))
         #print('Worker [' + str(worker_id) + '] has done ' + str(i) + ' of the ' + str(len(time_windows)) + ' windows')
         i+=1
 
