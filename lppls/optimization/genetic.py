@@ -9,12 +9,12 @@ def fit_genetic(log_price):
     (0, 10),                
     (0, 10),                     
 ]
-    pop_num = 1000
+    pop_num = 100
     elite_num = int(pop_num*0.15)
     cross_num = int(pop_num*0.20)
     mut_num = int(pop_num*0.20)
     new_num = pop_num - elite_num - mut_num
-    gen_num = 100
+    gen_num = 10
     avg_elite_value = np.inf
     for gen in range(gen_num):
         print(gen)
