@@ -29,7 +29,7 @@ def fit_genetic(log_price):
 
         elite_value = sorted(pop_eval)[:elite_num]
         elite = [pop_eval[value] for value in elite_value]
-        print('Residual :' + str(elite_value[0]))
+        #print('Residual :' + str(elite_value[0]))
         if (avg_elite_value - np.mean(elite_value)) < 0.0001:
             break
         else:
