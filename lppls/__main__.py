@@ -15,7 +15,8 @@ if __name__ == '__main__':
     dates = data['dates']
 
     time_range = range(900,1200,1)
-    time_windows=range(300,700,20)
+    #time_windows=range(300,700,20)
+    time_windows=range(300,700,100)
     t0 = time.time()
     sig=LPPL_confidence_signal(log_price=log_price, time=time_range, time_windows=time_windows)
     t1 = time.time()
