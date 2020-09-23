@@ -66,7 +66,6 @@ def LPPL_confidence(log_price, time_windows, worker_id):
   #      'C1_avg':0, 'C1_std':0,'C1_min':0, 'C1_max':0, 'C1_median':0, 'C1_q1':0, 'C1_q3':0,
   #      'C2_avg':0, 'C2_std':0,'C2_min':0, 'C2_max':0, 'C2_median':0, 'C2_q1':0, 'C2_q3':0
   #      }
-    print('return res')
     return res
 
 def _total_return(log_price):
