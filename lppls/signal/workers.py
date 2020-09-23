@@ -19,6 +19,7 @@ class Worker(Process):
             job_params = self.queue_in.get()
             
             if job_params is None:
+                self.queue_out.put(None)
                 break
             
             log_price = job_params['log_price']
