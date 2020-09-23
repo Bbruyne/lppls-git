@@ -17,7 +17,6 @@ def fit_genetic(log_price):
     gen_num = 10
     avg_elite_value = np.inf
     for gen in range(gen_num):
-        print(gen)
         if gen == 0:
             pop = _new(new_num=pop_num,init_limits=init_limits)
         else:

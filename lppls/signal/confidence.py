@@ -8,7 +8,7 @@ def LPPL_confidence(log_price, time_windows, worker_id):
     i = 1
     for dt in time_windows:
         sols.append(fit_genetic(log_price[-dt:]))
-        print('Worker [' + str(worker_id) + '] has done ' + str(i) + ' of the ' + str(len(time_windows)) + ' windows')
+        #print('Worker [' + str(worker_id) + '] has done ' + str(i) + ' of the ' + str(len(time_windows)) + ' windows')
         i+=1
 
     dt_max = get_dt_max(sols, time_windows)
