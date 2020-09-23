@@ -2,11 +2,14 @@ from ..optimization import fit_genetic, get_dt_max
 from .conditions_satisfied import conditions_satisfied
 import numpy as np
 
-def LPPL_confidence(log_price, time_windows):
+def LPPL_confidence(log_price, time_windows, worker_id):
     
     sols = []
+    i = 1
     for dt in time_windows:
         sols.append(fit_genetic(log_price[-dt:]))
+        print('Worker [' + str(worker_id) + '] has done ' + str(i) + ' of the ' + str(len(time_windows)) + ' windows')
+        i+=1
 
     dt_max = get_dt_max(sols, time_windows)
     LPPL_confidences = []
@@ -52,7 +55,7 @@ def LPPL_confidence(log_price, time_windows):
   #      'C2_avg':np.mean(C2s), 'C2_std':np.std(C2s),'C2_min':np.min(C2s), 'C2_max':np.max(C2s), 'C2_median':np.median(C2s), 'C2_q1':np.percentile(C2s,25), 'C2_q3':np.percentile(C2s,75)
   #      }
     else:
-        res = {'conf':0, 'n_days':len(LPPL_confidences), 'tc_median':0,'tc_std':0, 'tc_q1':0, 'tc_q3':0,'tc_end':0,'tc_exp':0}
+        res = {'conf':0, 'n_days':0, 'tc_median':0,'tc_std':0, 'tc_q1':0, 'tc_q3':0,'tc_end':0,'tc_exp':0}
   #     }
   #      res = {'conf': 0,
   #      'tc_avg': 0, 'tc_std': 0, 'tc_min': 0, 'tc_max':0, 'tc_median':0, 'tc_q1':0, 'tc_q3':0,
