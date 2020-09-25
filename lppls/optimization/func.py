@@ -7,9 +7,8 @@ def func(x, log_price):
     '''
     tc, beta, omega = wrapper_scaling(x,log_price)
     fit = fit_ABC(beta, omega, tc, log_price)
-    tc = int(tc)
-    t = np.arange(tc)
-    return np.sum((LPPL(t=t, A=fit['A'], B=fit['B'], C1=fit['C1'], C2=fit['C2'], beta=beta, omega=omega, tc=tc)-log_price[:tc])**2)/tc
+    t = np.arange(len(log_price))
+    return np.sum((LPPL(t=t, A=fit['A'], B=fit['B'], C1=fit['C1'], C2=fit['C2'], beta=beta, omega=omega, tc=tc)-log_price)**2)/tc
 
 def LPPL(t, A, B, C1, C2, beta, omega, tc):
     return A + B*_f(tc, t, beta) + C1*_g(tc, t, beta, omega) + C2*_h(tc, t, beta, omega)
