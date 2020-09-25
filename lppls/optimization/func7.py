@@ -6,10 +6,10 @@ def func7(x, A, B, C1, C2, log_price):
     finds the least square difference
     '''
     tc, beta, omega = wrapper_scaling(x,log_price)
+    tc = int(tc)
+    t = np.arange(tc)
 
-    t = np.arange(len(log_price))
-
-    return np.sum((LPPL(t=t, A=A, B=B, C1=C1, C2=C2, beta=beta, omega=omega, tc=tc)-log_price)**2)
+    return np.sum((LPPL(t=t, A=A, B=B, C1=C1, C2=C2, beta=beta, omega=omega, tc=tc)-log_price[:tc])**2)/tc
 
 
 def LPPL(t, A, B, C1, C2, beta, omega, tc):
