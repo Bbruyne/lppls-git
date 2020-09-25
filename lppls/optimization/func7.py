@@ -7,9 +7,10 @@ def func7(x, A, B, C1, C2, log_price):
     '''
     tc, beta, omega = wrapper_scaling(x,log_price)
     tc = int(tc)
-    t = np.arange(tc)
+    end_bubble = np.min([tc,len(log_price)])
+    t = np.arange(end_bubble)
 
-    return np.sum((LPPL(t=t, A=A, B=B, C1=C1, C2=C2, beta=beta, omega=omega, tc=tc)-log_price[:tc])**2)/tc
+    return np.sum((LPPL(t=t, A=A, B=B, C1=C1, C2=C2, beta=beta, omega=omega, tc=tc)-log_price[:end_bubble])**2)/tc
 
 
 def LPPL(t, A, B, C1, C2, beta, omega, tc):
